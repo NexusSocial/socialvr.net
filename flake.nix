@@ -32,9 +32,10 @@
         {
           devShells.default = pkgs.mkShell {
             buildInputs = with pkgs; [
+              just
               nixpkgs-fmt
               simple-http-server
-              just
+              prettier
             ];
           };
           formatter = pkgs.nixpkgs-fmt;
