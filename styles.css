@@ -98,13 +98,13 @@ body {
 
 #header {
 	width: 100%;
-	background-color: #5e4e8c;
+	/* background-color: #5e4e8c; */
 	/* header color here! */
-	height: 150px;
+	height: 110px;
 	/* this is only for a background image! */
 	/* if you want to put images IN the header, 
       you can add them directly to the <div id="header"></div> element! */
-	background-image: var(--header-image);
+	/* background-image: var(--header-image); */
 	background-size: 100%;
 }
 
