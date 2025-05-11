@@ -6,14 +6,24 @@
 		<title>SocialVR.net</title>
 		<link rel="stylesheet" href="./third_party/wordart.css" />
 		<link rel="stylesheet" href="styles.css" />
-		<script src="third_party/oneko.js"></script>
+		<script type="module">
+			const { oneko } = await import("./third_party/oneko.js");
+			let wasClicked = false;
+			const onekoOnce = () => {
+				if (!wasClicked) {
+					wasClicked = true;
+					oneko();
+				}
+			};
+			document.getElementById("wordart-title").onclick = onekoOnce;
+		</script>
 	</head>
 
 	<body>
 		<div id="container">
 			<div id="headerArea">
 				<div id="header" class="wordart superhero">
-					<h1 class="text" data-text="SocialVR.net" onclick="oneko()">
+					<h1 id="wordart-title" class="text" data-text="SocialVR.net">
 						SocialVR.net
 					</h1>
 				</div>
@@ -31,8 +41,8 @@
 
 			<div id="flex">
 				<main>
-					<h1>Welcome to my Layout Maker!</h1>
-					<p><strong>Please read this first!</strong></p>
+					<h1>Social VR Webring</h1>
+					<p><strong>Free and Open Source (FOSS) Social VR</strong></p>
 					<p>
 						This tool generates a layout that is responsive, which means it
 						looks great on phones! Use dropdowns above to customize your
